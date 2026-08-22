@@ -30,7 +30,7 @@ def _render_default(col) -> str:
     if d is not None and getattr(d, "is_scalar", False):
         val = d.arg
         if isinstance(val, bool):
-            return "1" if val else "0"
+            return "TRUE" if val else "FALSE"
         if isinstance(val, (int, float)):
             return repr(val)
         if isinstance(val, str):
