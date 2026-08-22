@@ -1,0 +1,47 @@
+# ── Secrets — NEVER commit ──
+.env
+.env*.local
+*.local.env
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+_keycheck.py
+
+# ── Local databases ──
+anromi.db
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# ── Test / tooling caches ──
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ── Frontend Next.js ──
+frontend/node_modules/
+node_modules/
+frontend/.next/
+.next/
+frontend/out/
+out/
+*.tsbuildinfo
+frontend/.env*.local
+
+# ── OS / editor / AI noise ──
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.idea/
+.vscode/
+.claude/
+.codex/
+.cursor/
+.impeccable/

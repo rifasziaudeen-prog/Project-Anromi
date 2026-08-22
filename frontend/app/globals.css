@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/*
+═══════════════════════════════════════════════════
+ ANROMI THEME TOKENS — reskin the entire game HERE.
+ Tailwind v4 @theme generates utilities from these
+ (bg-ink-900, text-gold, border-mist/20, ...).
+═══════════════════════════════════════════════════ */
+@theme {
+  --color-ink-950: #0a0908;
+  --color-ink-900: #12100d;
+  --color-ink-800: #1c1915;
+  --color-ink-700: #2a251e;
+  --color-gold: #d4af37;
+  --color-gold-dim: #8a7327;
+  --color-jade: #3ddc97;
+  --color-blood: #c0392b;
+  --color-soul: #9b7ede;
+  --color-parchment: #e8dcc0;
+  --color-mist: #8f8676;
+  --font-display: var(--font-serif-stack);
+  --font-body: var(--font-sans-stack);
+  --font-serif-stack: Georgia, "Times New Roman", serif;
+  --font-sans-stack: system-ui, -apple-system, sans-serif;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 50% -10%, rgba(212, 175, 55, 0.07), transparent),
+    radial-gradient(900px 400px at 100% 100%, rgba(155, 126, 222, 0.05), transparent),
+    var(--color-ink-950);
+  color: var(--color-parchment);
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(28, 25, 21, 0.9), rgba(18, 16, 13, 0.95));
+  border: 1px solid color-mix(in srgb, var(--color-gold) 22%, transparent);
+  border-radius: 0.75rem;
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-dim), transparent);
+}
+
+.btn-action {
+  transition: transform 0.08s ease, filter 0.15s ease;
+}
+.btn-action:not(:disabled):hover {
+  filter: brightness(1.15);
+}
+.btn-action:not(:disabled):active {
+  transform: translateY(1px);
+}
+.btn-action:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 12px rgba(212, 175, 55, 0.25); }
+  50% { box-shadow: 0 0 28px rgba(212, 175, 55, 0.55); }
+}
+.storm-glow {
+  animation: pulse-glow 2.4s infinite;
+}
